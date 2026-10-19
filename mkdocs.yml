@@ -9,6 +9,9 @@ nav:
     - Installation & Setup: 02-installation-and-setup.md
     - Users, Groups & Permissions: 03-user-groups-and-permissions.md
     - Security & Governance: 04-gitlab-security-and-governance.md
+    - SSO & Authentication: 12-gitlab-sso-and-authentication.md
+    - Runner Hardening: 13-runner-hardening-and-operations.md
+    - Backup & Recovery: 14-backup-and-disaster-recovery.md
     - Best Practices: 08-best-practices.md
   - CI/CD:
     - CI/CD Fundamentals: 05-ci-cd-fundamentals.md

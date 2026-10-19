@@ -12,6 +12,7 @@ The materials in this project cover:
 - CI/CD pipelines, runners, and deployment automation
 - Kubernetes and Helm-based release workflows
 - Security, troubleshooting, and best practices
+- Advanced admin topics including SSO, runner hardening, backups, and production operations
 
 ## Repository structure
 
@@ -31,7 +32,10 @@ The materials in this project cover:
 │   ├── 08-best-practices.md
 │   ├── 09-troubleshooting.md
 │   ├── 10-examples.md
-│   └── 11-deployment-strategies.md
+│   ├── 11-deployment-strategies.md
+│   ├── 12-gitlab-sso-and-authentication.md
+│   ├── 13-runner-hardening-and-operations.md
+│   └── 14-backup-and-disaster-recovery.md
 ├── mkdocs.yml
 ├── requirements.txt
 ├── LICENSE
@@ -66,6 +70,8 @@ This guide focuses on the key responsibilities of a GitLab administrator, includ
 - GitLab Runner operations
 - backup, monitoring, and system maintenance
 - compliance and governance
+- SSO integration and user lifecycle control
+- runner security and hardening
 
 ## GitLab CI/CD topics
 
@@ -112,6 +118,7 @@ deploy_job:
 4. Understand CI/CD fundamentals and runner setup
 5. Use Helm and Kubernetes deployment examples
 6. Apply best practices and troubleshoot issues
+7. Review SSO, runner hardening, and backup strategies
 
 ---
 
