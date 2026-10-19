@@ -1,0 +1,51 @@
+stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+cache:
+  paths:
+    - .cache/pip/
+    - .venv/
+
+build_docs:
+  stage: build
+  image: python:3.12
+  script:
+    - python -m venv .venv
+    - . .venv/bin/activate
+    - pip install --upgrade pip
+    - pip install -r requirements.txt
+    - mkdocs build --strict
+  artifacts:
+    paths:
+      - site/
+    expire_in: 1 week
+
+check_links:
+  stage: test
+  image: python:3.12
+  script:
+    - python -m venv .venv
+    - . .venv/bin/activate
+    - pip install --upgrade pip
+    - pip install -r requirements.txt
+    - mkdocs build --strict
+
+pages:
+  stage: deploy
+  image: python:3.12
+  script:
+    - python -m venv .venv
+    - . .venv/bin/activate
+    - pip install --upgrade pip
+    - pip install -r requirements.txt
+    - mkdocs build --strict
+  artifacts:
+    paths:
+      - public
+  only:
+    - main

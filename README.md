@@ -1,48 +1,88 @@
 # Getting Started with GitLab
 
-This repository contains training materials and a hands-on guide for GitLab administration and GitLab CI/CD workflows. It uses MkDocs with the Material theme and is designed for modern onboarding and practical learning.
+This repository provides a practical starter guide for GitLab administrators and engineering teams who want to learn the basics of GitLab, GitLab CI/CD, and deployment workflows.
 
-## Contents
+## What is included
 
-- docs/ — documentation source
-- examples/ — sample GitLab CI/CD pipeline files
-- .github/workflows/ — automation to build and publish the docs site
+- GitLab admin overview and setup guidance
+- User, group, and permission model
+- GitLab CI/CD fundamentals and runner setup
+- Example pipeline files and deployment notes
+- Troubleshooting and best-practice recommendations
 
-## Quick start
+## Repository structure
 
-1. Read the docs in the `docs/` folder.
-2. Review the example CI files under `examples/`.
-3. Customize the content and pipelines for your environment.
+```text
+.
+├── README.md
+├── .gitlab-ci.yml
+├── docs/
+│   ├── index.md
+│   ├── 01-gitlab-admin-overview.md
+│   ├── 02-installation-and-setup.md
+│   ├── 03-user-groups-and-permissions.md
+│   ├── 05-ci-cd-fundamentals.md
+│   ├── 06-gitlab-runner-setup.md
+│   ├── 07-helm-and-kubernetes-deployments.md
+│   ├── 08-best-practices.md
+│   ├── 09-troubleshooting.md
+│   └── 10-examples.md
+├── mkdocs.yml
+├── requirements.txt
+└── LICENSE
+```
 
-## View the documentation locally
-
-To preview the documentation website in your browser:
+## Local preview
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate   # On Windows use: .venv\Scripts\activate
+source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 mkdocs serve
 ```
 
-Then open the local URL shown in the terminal, usually:
+Open the local URL displayed by MkDocs, usually:
 
 ```text
 http://127.0.0.1:8000
 ```
 
-You can also build the static site with:
+## Documentation highlights
 
-```bash
-mkdocs build
+### GitLab admin
+
+- Project and group management
+- Authentication and access controls
+- Runner and security configuration
+- Backup, maintenance, and environment hygiene
+
+### CI/CD
+
+- Pipeline structure with stages and jobs
+- Variables, artifacts, and caching
+- Runner registration and executor selection
+- Deployment patterns for Kubernetes and Helm
+
+## Example CI pipeline
+
+```yaml
+stages:
+  - test
+
+job_test:
+  stage: test
+  script:
+    - echo "Running tests"
+    - python --version
 ```
 
-This creates a `site/` folder with the generated documentation.
+## Next steps
 
-## Local preview
+1. Review the admin guide in `docs/01-gitlab-admin-overview.md`
+2. Read the CI/CD fundamentals in `docs/05-ci-cd-fundamentals.md`
+3. Customize the examples to fit your GitLab setup and deployment workflow
 
-```bash
-python -m pip install -r requirements.txt
-mkdocs serve
-```
+---
+
+This repository is intended as a starter resource for GitLab onboarding and training.
