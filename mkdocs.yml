@@ -1,0 +1,23 @@
+site_name: Getting Started with GitLab
+site_description: Admin guide and GitLab CI/CD training materials for modern teams
+site_author: nirpendra83
+repo_name: nirpendra83/getting-started-with-gitlab
+nav:
+  - Home: index.md
+  - Admin:
+    - Overview: 01-gitlab-admin-overview.md
+    - Installation & Setup: 02-installation-and-setup.md
+    - Users, Groups & Permissions: 03-user-groups-and-permissions.md
+    - Best Practices: 08-best-practices.md
+  - CI/CD:
+    - CI/CD Fundamentals: 05-ci-cd-fundamentals.md
+    - GitLab Runner Setup: 06-gitlab-runner-setup.md
+    - Examples: 10-examples.md
+  - Deployments:
+    - Helm & Kubernetes: 07-helm-and-kubernetes-deployments.md
+  - Troubleshooting: 09-troubleshooting.md
+
+theme:
+  name: material
+
+plugins: []
