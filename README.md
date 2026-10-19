@@ -1,14 +1,17 @@
 # Getting Started with GitLab
 
-This repository provides a practical starter guide for GitLab administrators and engineering teams who want to learn the basics of GitLab, GitLab CI/CD, and deployment workflows.
+This repository is a practical starter guide for learning GitLab administration, GitLab CI/CD, and modern DevOps workflows. It is designed for beginners and intermediate learners who want a clear path to understanding GitLab as a complete platform for code collaboration, automation, and deployment.
 
-## What is included
+## Repository purpose
 
-- GitLab admin overview and setup guidance
-- User, group, and permission model
-- GitLab CI/CD fundamentals and runner setup
-- Example pipeline files and deployment notes
-- Troubleshooting and best-practice recommendations
+The materials in this project cover:
+
+- GitLab fundamentals and architecture
+- GitLab administration and governance
+- Users, groups, access control, and protection rules
+- CI/CD pipelines, runners, and deployment automation
+- Kubernetes and Helm-based release workflows
+- Security, troubleshooting, and best practices
 
 ## Repository structure
 
@@ -21,18 +24,23 @@ This repository provides a practical starter guide for GitLab administrators and
 │   ├── 01-gitlab-admin-overview.md
 │   ├── 02-installation-and-setup.md
 │   ├── 03-user-groups-and-permissions.md
+│   ├── 04-gitlab-security-and-governance.md
 │   ├── 05-ci-cd-fundamentals.md
 │   ├── 06-gitlab-runner-setup.md
 │   ├── 07-helm-and-kubernetes-deployments.md
 │   ├── 08-best-practices.md
 │   ├── 09-troubleshooting.md
-│   └── 10-examples.md
+│   ├── 10-examples.md
+│   └── 11-deployment-strategies.md
 ├── mkdocs.yml
 ├── requirements.txt
-└── LICENSE
+├── LICENSE
+└── site/
 ```
 
-## Local preview
+## Local setup
+
+To preview the documentation locally:
 
 ```bash
 python -m venv .venv
@@ -42,47 +50,69 @@ python -m pip install -r requirements.txt
 mkdocs serve
 ```
 
-Open the local URL displayed by MkDocs, usually:
+Then open the local URL displayed in the terminal, usually:
 
 ```text
 http://127.0.0.1:8000
 ```
 
-## Documentation highlights
+## GitLab admin topics
 
-### GitLab admin
+This guide focuses on the key responsibilities of a GitLab administrator, including:
 
-- Project and group management
-- Authentication and access controls
-- Runner and security configuration
-- Backup, maintenance, and environment hygiene
+- user and group management
+- authentication and access control
+- project and branch protection
+- GitLab Runner operations
+- backup, monitoring, and system maintenance
+- compliance and governance
 
-### CI/CD
+## GitLab CI/CD topics
 
-- Pipeline structure with stages and jobs
-- Variables, artifacts, and caching
-- Runner registration and executor selection
-- Deployment patterns for Kubernetes and Helm
+The CI/CD section provides core understanding of:
+
+- pipeline stages and jobs
+- variables, artifacts, and cache usage
+- GitLab Runner execution
+- test automation
+- deployment approvals and release workflows
+- Kubernetes and Helm deployment patterns
 
 ## Example CI pipeline
 
 ```yaml
 stages:
+  - build
   - test
+  - deploy
 
-job_test:
+build_job:
+  stage: build
+  script:
+    - echo "Building application"
+
+unit_test:
   stage: test
   script:
     - echo "Running tests"
-    - python --version
+
+deploy_job:
+  stage: deploy
+  script:
+    - echo "Deploying application"
+  only:
+    - main
 ```
 
-## Next steps
+## Suggested learning path
 
-1. Review the admin guide in `docs/01-gitlab-admin-overview.md`
-2. Read the CI/CD fundamentals in `docs/05-ci-cd-fundamentals.md`
-3. Customize the examples to fit your GitLab setup and deployment workflow
+1. Read the GitLab admin overview
+2. Review installation and setup guidance
+3. Learn group permissions and access control
+4. Understand CI/CD fundamentals and runner setup
+5. Use Helm and Kubernetes deployment examples
+6. Apply best practices and troubleshoot issues
 
 ---
 
-This repository is intended as a starter resource for GitLab onboarding and training.
+This repository serves as a starter reference for GitLab onboarding and DevOps training.

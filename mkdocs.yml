@@ -8,11 +8,13 @@ nav:
     - Overview: 01-gitlab-admin-overview.md
     - Installation & Setup: 02-installation-and-setup.md
     - Users, Groups & Permissions: 03-user-groups-and-permissions.md
+    - Security & Governance: 04-gitlab-security-and-governance.md
     - Best Practices: 08-best-practices.md
   - CI/CD:
     - CI/CD Fundamentals: 05-ci-cd-fundamentals.md
     - GitLab Runner Setup: 06-gitlab-runner-setup.md
     - Examples: 10-examples.md
+    - Deployment Strategies: 11-deployment-strategies.md
   - Deployments:
     - Helm & Kubernetes: 07-helm-and-kubernetes-deployments.md
   - Troubleshooting: 09-troubleshooting.md
