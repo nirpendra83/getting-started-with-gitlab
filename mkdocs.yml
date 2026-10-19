@@ -26,5 +26,10 @@ nav:
 
 theme:
   name: material
+  palette:
+    primary: 'orange'
+    accent: 'deep-orange'
+extra_css:
+  - assets/css/extra.css
 
 plugins: []
