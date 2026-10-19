@@ -3,6 +3,7 @@ site_description: Admin guide and GitLab CI/CD training materials for modern tea
 site_author: nirpendra83
 repo_name: nirpendra83/getting-started-with-gitlab
 site_url: https://nirpendra83.github.io/getting-started-with-gitlab/
+use_directory_urls: false
 nav:
   - Home: index.md
   - Admin:
